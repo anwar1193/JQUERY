@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latihan</title>
+<script src="../jquery-3.4.1.js"></script>
+
+</head>
+<body>
+
+<form action="">
+	<input type="date" name="tanggal" id="tanggal">
+
+	<button type="button" id="tombol">Klik</button>
+
+	<span id="tampil"></span>
+</form>
+
+<script>
+	
+	$(document).ready(function(){
+
+		// var tanggal = $('#tanggal').val();
+
+		$(document).on('click', '#tombol', function(){
+			var tanggal = $('#tanggal').val();
+			if(tanggal == ''){
+				alert('Tanggal Kosong');
+			}else{
+				alert('Tanggal Terisi');
+			}
+		});
+
+
+	});
+
+</script>
+
+</body>
+</html>

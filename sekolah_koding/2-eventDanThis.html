@@ -1,0 +1,48 @@
+<!-- Untuk daftar kumpulan event JQuery ada di link berikut : https://api.jquery.com/category/events/  -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Event dan This</title>
+	<script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+	
+	<h1>OBJECT 1</h1>
+	
+	<div id="object2">OBJECT 2</div><br />
+	
+	<div class="object3">OBJECT 3</div><br />
+	<div class="object3">OBJECT 3</div><br />
+	<div class="object3">OBJECT 3</div><br />
+	
+	<button class="tombol1" type="button">Tombol 1</button>
+	<button class="tombol2" type="button">Tombol 2</button>
+	
+	<script>
+		$(document).ready(function(){
+			
+			$('.tombol1').click(function(){ // Event Click -> Tombol 1 di klik
+				$('h1').css('color','red'); // Selection -> h1 berubah jadi merah
+			});
+			
+			$('.tombol2').click(function(){        // Event Click -> ID tombol2 di klik
+				$('#object2').css('color','blue'); // Selection -> Object2 jadi warna biru
+			});
+			
+			$('h1').mouseenter(function(){		// Event mouseenter -> arahkan kursor ke h1
+				$('h1').css('color','black');	// Selection -> h1 berubah jadi hitam
+			});
+			
+			$('h1').mouseleave(function(){		// Event mouseleave -> kursor meninggalkan h1
+				$('h1').css('color','blue');	// Selection -> h1 berubah jadi biru
+			});
+			
+			$('.object3').mouseenter(function(){ // Event mouseenter -> arahkan kursor ke object3
+				$(this).css('color','yellow');   // Selection -> object3 yang di arahkan kursor jadi kuning
+			});
+			
+		});
+	</script>
+	
+</body>
+</html>

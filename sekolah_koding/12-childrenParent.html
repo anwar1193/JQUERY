@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Children dan Parent</title>
+<script src="jquery-3.4.1.js"></script>	
+</head>
+<body>
+	
+	<ul class="parent1">
+		<li>Apel</li>
+		<li>Alpukat</li>
+		<li>Belimbing</li>
+		<li id="chery">Chery</li>
+		<li>Durian</li>
+		<span>Span Luar</span>
+		<p>P luar</p>
+		<div>
+			<p>P Dalam</p>
+			<span>Span Dalam</span>
+		</div>
+	</ul>
+	
+<script>
+	$(document).ready(function(){
+		//children - find - parent - parents - parentsUntil
+		
+		$('.parent1').children('span').css('color','red'); //children -> yang akan diseleksi hanya anak pertama (ambil children span dari parent1)
+		$('.parent1').find('p').css('color','blue'); //find -> yang akan diseleksi semua element p (ambil children p dari parent1)
+		$('#chery').parent().css('background','yellow'); //parents -> menyeleksi parents dimana id chery berada
+		//parents->memilih semua parents yang ada di halaman
+		//parentsUntil -> memilih parents bertingkat (sampai tingkat mana parents nya)
+		
+		
+	});
+</script>
+	
+</body>
+</html>

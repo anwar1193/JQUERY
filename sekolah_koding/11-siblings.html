@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Siblings</title>
+<script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+
+	<ul>
+		<li id="buah_pertama">Apel</li>
+		<li id="buah_kedua">Alpukat</li>
+		<li>Belimbing</li>
+		<li>Chery</li>
+		<li class="mantap">Durian</li>
+		<li>Jeruk</li>
+		<li>Mangga</li>
+		<li id="asem">Markisa</li>
+		<li>Nanas</li>
+		<li>Nangka</li>
+		<li>Rambutan</li>
+	</ul>
+
+<script>
+	$(document).ready(function(){
+		
+		// sibilings - next - nextAll - nextUntil('parameter') || prev - prevAll - prevUntil('parameter')
+		
+		//siblings -> memilih element yang 1 parent dengan element tersebut (element tersebut tidak ikut)
+		$('#asem').siblings().css('fontSize','30px');
+		
+		//next -> memilih element selanjutnya
+		$('#buah_pertama').next().css('color','green');
+		
+		//nextUntil -> memilih element selanjutnya sampai ke element tertentu (isi di parameter)
+		$('#buah_kedua').nextUntil('.mantap').css('color','yellow');
+		
+		//nextAll -> memilih element selanjutnya (dipilih semua sampai element terakhir)
+		$('#asem').nextAll().css('color','purple');
+		
+		//hal yang sama berlaku pada prev
+		
+		
+	});
+</script>	
+</body>
+</html>

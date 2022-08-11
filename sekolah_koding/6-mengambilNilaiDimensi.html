@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Mengambil Nilai Dimensi</title>
+
+<script src="jquery-3.4.1.js"></script>	
+
+<style>
+
+	#kotak{
+		background: orange;
+		width: 100px;
+		height: 100px;
+		padding: 10px;
+		border: 1px solid black;
+		margin: 10px;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<div id="kotak">
+		<div>Kotak Nasi</div>
+		<div>Kotak Amal</div>
+		<div>Kotak Sampah</div>
+		<div>Kotak Pensil</div>
+	</div>
+	
+	<div id="nilai">
+		Tampil Nilai Disini
+	</div>
+	
+	<script>
+		
+		$(document).ready(function(){
+			//width / height -> kontent
+			//innerwidth -> konten + padding
+			//outerwidth -> konten + padding + border
+			//outerwidth(true) -> konten + padding + border + margin
+			
+			var tampil = $('#kotak').width();
+			var tampil2 = $('#kotak').innerWidth();
+			var tampil3 = $('#kotak').outerWidth();
+			var tampil4 = $('#kotak').outerWidth(true);
+			
+			$('#nilai').text(tampil4);
+			
+		})
+		
+	</script>
+	
+</body>
+</html>

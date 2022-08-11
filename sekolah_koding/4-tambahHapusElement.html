@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Tambah Hapus Elemen</title>
+
+<script src="jquery-3.4.1.js"></script>	
+
+<style>
+	#kendaraan{width:80px; height:80px; background-color: yellow; padding: 20px; margin-top: 20px;}
+</style>
+
+</head>
+<body>
+
+	<div id="hewan">
+		<div class="sapi">Sapi</div>
+		<div class="kambing">Kambing</div>
+	</div>
+	
+	<div id="kendaraan">
+		<div>Motor</div>
+		<div>Mobil</div>
+		<div>Sepeda</div>
+	</div>
+	
+	<script>
+		
+		$(document).ready(function(){
+		
+			//Tambah Element ada 4 : append, prepend, after, before
+			$('#hewan').append('<div>Singa</div>');   //append->menambah di dalam element (di dalam ID Hewan) posisi di akhir
+			$('#hewan').prepend('<div>Harimau</div>');//prepend->menambah di dalam element (di dalam ID Hewan) posisi di awal
+			$('#hewan').after('<div>Elang</div>');    //after->menambah di luar element (di luar ID Hewan) posisi di akhir
+			$('#hewan').before('<div>Gagak</div>');   //before->menambah di luar element (di luar ID Hewan) posisi di awal
+			//untuk melihat perbedaan nya ada di inspect element di browser
+			
+			//Hapus Element ada 2 : remove dan empty
+			$('#kendaraan').empty(); //Hanya Menghapus Konten, tanpa menghapus element
+			//$('#kendaraan').remove(); //Menghapus semua (sampai ke element nya)
+			
+		});
+		
+	</script>
+	
+</body>
+</html>

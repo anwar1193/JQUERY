@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Traversing</title>
+<script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+	
+	<ul>
+		<li>Apel</li>
+		<li>Belimbing</li>
+		<li>Chery</li>
+		<li class="spesial">Durian</li>
+		<li>Jeruk</li>
+	</ul>
+
+<script>
+	
+	$(document).ready(function(){
+		
+		//traversing -> memilih element (seperti selection) tapi lebih spesifik
+		$('li').first().css('color','red'); // mengubah li yang pertama jadi merah
+		$('li').last().css('color','blue'); // mengubah li yang terakhir jadi biru
+		$('li').eq(1).css('color','orange'); // mengubah li yang ke-2 jadi orange
+		
+		$('li').filter('.spesial').css('background','yellow'); // mengubah background li yang class nya "spesial"
+		$('li').not('.spesial').css('background','skyblue'); //mengubah background li yang class nya bukan "spesial"
+		
+	});
+	
+</script>	
+</body>
+</html>

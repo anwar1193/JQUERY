@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Stop, Callback dan Chaining</title>
+
+<script src="jquery-3.4.1.js"></script>	
+<style>
+	#kotak{
+		border: 1px solid black;
+		background-color: skyblue;
+		padding: 10px;
+		width:100px;
+		height:100px;
+		margin-bottom: 20px;
+	}
+</style>
+</head>
+<body>
+
+	<div id="kotak">
+		<div>Mobil</div>
+		<div>Motor</div>
+		<div>Pesawat</div>
+		<div>Kapal Laut</div>
+	</div>
+	
+	<button id="slideToggle">Slide Toggle</button>
+	<button id="stop">Stop</button>
+	<button id="callback">Callback</button>
+	<button id="chaining">Chaining</button>
+
+<script>
+	$(document).ready(function(){
+		
+		$('#slideToggle').click(function(){
+			$('#kotak').slideToggle(7000);
+		});
+		
+		$('#stop').click(function(){
+			$('#kotak').stop();			//stop->menghentikan efek animasi apapun
+		});
+		
+		$('#callback').click(function(){
+			$('#kotak').slideUp(3000, function(){ //callback->setelah perintah dijalankan, tambahkan perintah selanjutnya (contoh setelah slideUp, tambah tampilkan alert)
+				alert('kotak hilang !!');
+			});
+		});
+		
+		$('#chaining').click(function(){
+			$('#kotak').hide().slideDown(2000).fadeOut(2000).fadeIn(2000).fadeTo(2000,0.5); //chaining->menampilkan banyak perintah berurutan
+		});
+		
+	});
+</script>	
+</body>
+</html>

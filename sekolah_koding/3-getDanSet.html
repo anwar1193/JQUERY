@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Get dan Set</title>
+
+<script src="jquery-3.4.1.js"></script>	
+</head>
+<body>
+	
+	<form id="form1">
+		<input type="text" name="input1" id="input1" />
+		<input type="submit" value="submit1"/>
+	</form> <br />
+	
+	<form id="form2">
+		<input type="text" name="input2" id="input2" />
+		<input type="submit" value="submit2"/>
+	</form> <br />
+	
+	<form id="form3">
+		<input type="text" name="input3" id="input3" placeholder="Masukan teks + tag html"/>
+		<input type="submit" value="submit3"/>
+	</form> <br />
+	
+	<h1>OBJECT 1</h1>
+	
+	<h2>OBJECT 2</h2>
+
+<script>
+	$(document).ready(function(){
+		
+		$('#form1').submit(function(){ // Event Submit -> form1 di submit
+			alert($('#input1').val()); // Tampil Alert -> alert nya adalah value dari input1
+		});
+		
+		$('#form2').submit(function(){
+			var tulisan = $('#input2').val(); //SET -> isi variable tulisan dengan value/nilai dari input2
+			$('h1').text(tulisan);            //GET -> h1 di set value nya dengan var tulisan (text saja tidak bisa dengan tag html)
+			
+			event.preventDefault(); //mencegah reload halaman (mengilangkan sifat dari form yang reload saat di proses)
+		});
+		
+		$('#form3').submit(function(){
+			var tulisan2 = $('#input3').val();  //SET -> isi variable tulisan2 dengan value/nilai dari input3
+			$('h2').html(tulisan2);            //GET -> h2 di set value nya dengan var tulisan2 (bisa dengan tag html)
+			event.preventDefault();
+		});
+		
+		
+		
+	});
+</script>	
+</body>
+</html>

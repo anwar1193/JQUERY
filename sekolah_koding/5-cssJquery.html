@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>CSS di Jquery</title>
+	<script src="jquery-3.4.1.js"></script>
+	
+	<style>
+		.warna_lain{
+			background-color: blue;
+			color: white;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hallo Guys (Klik Disini)</h1>
+	<h2>Kena addClass</h2>
+	<h3 class="warna_lain">Kena removeClass</h3>
+	<h4>Kena toggleClass</h4>
+	
+	<script>
+		
+		$(document).ready(function(){
+			$('h1').css({
+				'color' : 'red',
+				'fontSize' : '20px',
+				'backgroundColor' : 'yellow'
+			});
+			
+			$('h1').click(function(){
+				$('h2').addClass('warna_lain'); // fungsi addClass -> untuk menambahkan class css pada jquery
+				$('h3').removeClass('warna_lain'); // fungsi removeClass -> untuk menghilangkan class css pada jquery
+				$('h4').toggleClass('warna_lain'); // fungsi toggleClass (addClass + removeClass) -> untuk menambahkan/menghilangkan class css disetiap klik pada jquery
+			});
+		});
+		
+	</script>
+</body>
+</html>
